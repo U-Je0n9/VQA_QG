@@ -30,20 +30,6 @@ def CoT(image_id, ambiguous_question, ambiguous_entity, entity_id, ambiguous_que
     image_path = os.path.join(image_dir, f"{image_id}.jpg")
     image = Image.open(image_path)
 
-    # 다른 entity box 좌표 설정
-    keys = sceneGraphs[str(image_id)]['objects'].keys()
-    objects=sceneGraphs[str(image_id)]['objects']
-    i = 0
-    coordinates = ""
-    for k in keys:
-        if k != str(entity_id) and objects[k]['name'] == locations['name']:
-            i+=1
-            v = objects[k]
-            x1_ = round(v['x']/width , 4)
-            y1_ = round(v['y']/height , 4)
-            x2_ = round((v['x']+v['w'])/width , 4)
-            y2_ = round((v['y']+v['h'])/height , 4)
-            coordinates += f"The coordinates of non-target {v['name']+ str(i)} not in the question : ({x1_}, {y1_}, {x2_}, {y2_})\n"
     q_count = 0
     context = ""
     while q_count < 3 :
