@@ -1,0 +1,74 @@
+{
+  "builder_name": "csv",
+  "citation": "",
+  "config_name": "default",
+  "dataset_name": "csv",
+  "dataset_size": 5022995,
+  "description": "",
+  "download_checksums": {
+    "/workspace/visual_question_generation/./VQA_AQ.csv": {
+      "num_bytes": 4601662,
+      "checksum": null
+    }
+  },
+  "download_size": 4601662,
+  "features": {
+    "no1": {
+      "dtype": "int64",
+      "_type": "Value"
+    },
+    "q_id": {
+      "dtype": "int64",
+      "_type": "Value"
+    },
+    "image_id": {
+      "dtype": "int64",
+      "_type": "Value"
+    },
+    "original_question": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "ambiguous_question": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "ambiguous_question_answer": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "ambiguous_entity": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "entity_id": {
+      "dtype": "int64",
+      "_type": "Value"
+    },
+    "additional_question": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "ambiguous_question_entity": {
+      "dtype": "string",
+      "_type": "Value"
+    }
+  },
+  "homepage": "",
+  "license": "",
+  "size_in_bytes": 9624657,
+  "splits": {
+    "train": {
+      "name": "train",
+      "num_bytes": 5022995,
+      "num_examples": 25812,
+      "dataset_name": "csv"
+    }
+  },
+  "version": {
+    "version_str": "0.0.0",
+    "major": 0,
+    "minor": 0,
+    "patch": 0
+  }
+}
