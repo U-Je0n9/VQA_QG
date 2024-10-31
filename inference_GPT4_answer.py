@@ -67,29 +67,7 @@ def CoT(image_id, ambiguous_question, ambiguous_entity, entity_id, ambiguous_que
     }   
     key = f"{image_id}.jpg"
     image_url = image_url_dict[key]
-    #### 이 안에서 좌표 설정 및 모든 프롬프트 품고 있음 ####
-    # target box 좌표 설정
-    locations = sceneGraphs[str(image_id)]['objects'][str(entity_id)]
-    width, height = sceneGraphs[str(image_id)]['width'], sceneGraphs[str(image_id)]['height']
-    x, y, w, h = locations['x'], locations['y'], locations['w'], locations['h']
-    x1, x2 = round(x/width,4), round((x+w)/width,4)
-    y1, y2 = round(y/height,4), round((y+h)/height,4)
-    tar_coordinate = (x, y, w, h)
 
-    # 다른 entity box 좌표 설정
-    keys = sceneGraphs[str(image_id)]['objects'].keys()
-    objects=sceneGraphs[str(image_id)]['objects']
-    i = 0
-    coordinates = ""
-    for k in keys:
-        if k != str(entity_id) and objects[k]['name'] == locations['name']:
-            i+=1
-            v = objects[k]
-            x1_ = round(v['x']/width , 4)
-            y1_ = round(v['y']/height , 4)
-            x2_ = round((v['x']+v['w'])/width , 4)
-            y2_ = round((v['y']+v['h'])/height , 4)
-            coordinates += f"The coordinates of non-target {v['name']+ str(i)} not in the question : ({x1_}, {y1_}, {x2_}, {y2_})\n"
     q_count = 0
     context = ""
     while q_count < 3 :
